@@ -1,0 +1,120 @@
+{% extends "jeopardy/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<div>
+{% if show1 %}
+<h2> {{p1}} </h2>
+<h2> {{response1}} </h2>
+<h2> {{wager1}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+        <input type="hidden" name="valueH" value={{wager1}}>
+    <input type="hidden" name="show1" value="true">
+    <input type="hidden" name="player" value="0">
+    <input type="submit" name="correct" value="Correct">
+    <input type="submit" name="correct" value="Incorrect">
+  </form>
+{% else %}
+<h2> {{p1}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+        <input type="hidden" name="show1" value="true">
+  <input type="submit" name="reveal1" value="Reveal">
+  </form>
+
+{% endif%}
+</div>
+<div>
+{% if show2 %}
+<h2> {{p2}} </h2>
+<h2> {{response2}} </h2>
+<h2> {{wager2}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+        <input type="hidden" name="valueH" value={{wager2}}>
+    <input type="hidden" name="show2" value="true">
+    <input type="hidden" name="player" value="1">
+    <input type="submit" name="correct" value="Correct">
+    <input type="submit" name="correct" value="Incorrect">
+  </form>
+{% else %}
+<h2> {{p2}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+        <input type="hidden" name="show2" value="true">
+  <input type="submit" name="reveal2" value="Reveal">
+  </form>
+
+{% endif%}
+</div>
+<div>
+{% if show3 %}
+<h2> {{p3}} </h2>
+<h2> {{response3}} </h2>
+<h2> {{wager3}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+    <input type="hidden" name="valueH" value={{wager3}}>
+    <input type="hidden" name="show3" value="true">
+    <input type="hidden" name="player" value="2">
+    <input type="submit" name="correct" value="Correct">
+    <input type="submit" name="correct" value="Incorrect">
+  </form>
+{% else %}
+<h2> {{p3}} </h2>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="response1" value={{response1}}>
+    <input type="hidden" name="response2" value={{response2}}>
+    <input type="hidden" name="response3" value={{response3}}>
+    <input type="hidden" name="wager1" value={{wager1}}>
+    <input type="hidden" name="wager2" value={{wager2}}>
+    <input type="hidden" name="wager3" value={{wager3}}>
+        <input type="hidden" name="show3" value="true">
+  <input type="submit" name="reveal3" value="Reveal">
+  </form>
+
+{% endif%}
+</div>
+
+<form action="{% url 'end' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" name="end" value="Results">
+</form>
+
+
+{% endblock %}

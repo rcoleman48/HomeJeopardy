@@ -1,0 +1,38 @@
+{% extends "jeopardy/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+  <h1>  {{text}} </h1>
+    {% if catnum > 6 %}
+    <form action="{% url 'double' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value={{playerP}}>
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Correct">
+</form>
+<form action="{% url 'double' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value={{playerP}}>
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Incorrect">
+</form>
+
+{% elif catnum <= 6 %}
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value={{playerP}}>
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Correct">
+</form>
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value={{playerP}}>
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Incorrect">
+</form>
+
+{% endif %}
+{% endblock %}

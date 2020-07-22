@@ -1,0 +1,21 @@
+{% extends "jeopardy/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{{category}}</h1>
+    <form action="{% url 'final' %}" method="post">
+    {% csrf_token %}
+    <label for="wager1"> {{p1}} Wager: </label>
+    <input type="password" name="wager1">
+    <br>
+    <label for="wager2"> {{p2}} Wager: </label>
+    <input type="password" name="wager2">
+    <br>
+    <label for="wager3"> {{p3}} Wager: </label>
+    <input type="password" name="wager3">
+  <input type="submit" name="submitWager" value="Submit">
+  </form>
+{% endblock %}
