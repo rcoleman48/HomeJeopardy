@@ -1,0 +1,61 @@
+{% extends "jeopardy/layout.html" %}
+<head>
+<style>
+body {
+background-color: #060CE9;
+}
+</style>
+</head>
+{% block title %}
+    Jeopardy
+{% endblock %}
+
+{% block p1 %}
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="0">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Correct">
+</form>
+<form action="{% url 'question' catnum=catnum qnum=qnum %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="0">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Incorrect">
+</form>
+{% endblock %}
+		
+{% block p2 %}
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="1">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Correct">
+</form>
+<form action="{% url 'question' catnum=catnum qnum=qnum %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="1">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Incorrect">
+</form>
+{% endblock %}
+		
+{% block p3 %}
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="2">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Correct">
+</form>
+<form action="{% url 'question' catnum=catnum qnum=qnum %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="2">
+<input type="hidden" name="valueH" value={{valueP}}>
+<input type="submit" name="correct" value="Incorrect">
+</form>
+{% endblock %}
+{% block body %}
+<h1>
+{{text}}
+</h1>
+{% endblock %}

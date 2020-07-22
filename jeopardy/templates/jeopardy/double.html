@@ -1,0 +1,44 @@
+{% extends "jeopardy/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Jeopardy</h1>
+
+    <table>
+    <tr>
+        {% for name in categories %}
+            <td> {{name}} </td>       
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for q in questions %}
+            <th> <a href="{% url  'question2' catnum=forloop.counter0 qnum=0 %}"> $400 </a> </th>       
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for q in questions %}
+            <th> <a href="{% url  'question2' catnum=forloop.counter0 qnum=1  %}"> $800 </a> </th>       
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for q in questions %}
+            <th> <a href="{% url  'question2' catnum=forloop.counter0 qnum=2  %}"> $1200 </a> </th>       
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for q in questions %}
+            <th> <a href="{% url  'question2' catnum=forloop.counter0 qnum=3  %}"> $1600 </a> </th>       
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for q in questions %}
+            <th> <a href="{% url  'question2' catnum=forloop.counter0 qnum=4  %}"> $2000 </a> </th>       
+        {% endfor %}
+        </tr>
+    </table>
+    <h2>
+ <a href="{% url  'final'  %}"> Final Jeopardy </a> </h2>
+{% endblock %}

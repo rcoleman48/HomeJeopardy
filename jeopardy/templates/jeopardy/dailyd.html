@@ -1,0 +1,27 @@
+{% extends "jeopardy/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Daily Double!</h1>
+    <form action="{% url 'dailyd' %}" method="post">
+    {% csrf_token %}
+    <label for="wager"> Wager: </label>
+    <input type="number" name="wager">
+    <br>
+    <label for="Player1">{{p1}}</label>
+    <input type="radio" id="Player1" name="player" value="0">
+  <br>
+  <label for="Player2">{{p2}}</label>
+  <input type="radio" id="Player2" name="player" value="1">
+  <br>
+  <label for="Player3">{{p3}}</label>
+  <input type="radio" id="Player3" name="player" value="2">
+  <br>
+  <input type="hidden" name="catnum" value={{catnum}}>
+  <input type="hidden" name="qnum" value={{qnum}}>
+  <input type="submit" name="submitWager" value="Submit">
+  </form>
+{% endblock %}
