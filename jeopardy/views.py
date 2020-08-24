@@ -15,7 +15,8 @@ show1 = False
 show2 = False
 show3 = False
 
-with open(f"entries/JeopardyTest2.csv") as csv_file:
+with open(f"entries/JeopardyTest.csv") as csv_file:
+
 	csv_reader = csv.reader(csv_file, delimiter=',')
 	line_count = 0
 	for row in csv_reader:
