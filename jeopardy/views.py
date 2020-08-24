@@ -15,7 +15,7 @@ show1 = False
 show2 = False
 show3 = False
 
-with open(f"entries/JeopardyTest.csv") as csv_file:
+with open(f"entries/JeopardyTest2.csv") as csv_file:
 	csv_reader = csv.reader(csv_file, delimiter=',')
 	line_count = 0
 	for row in csv_reader:
@@ -152,7 +152,7 @@ def double(request):
 	}) 
         
 def question2(request, catnum, qnum):
-	if((catnum==3 and qnum==3) or (catnum==4 and qnum==4)):
+	if((catnum==3 and qnum==3) or (catnum==2 and qnum==4)):
 		return render(request, "jeopardy/dailyd.html", {
 				"catnum": catnum+6,
 				"qnum": qnum,
@@ -206,7 +206,7 @@ def question2(request, catnum, qnum):
         })
 
 def question(request, catnum, qnum):
-	if(catnum==1 and qnum==3):
+	if(catnum==4 and qnum==3):
 		return render(request, "jeopardy/dailyd.html", {
 				"catnum": catnum,
 				"qnum": qnum,
