@@ -58,4 +58,10 @@ background-color: #060CE9;
 <h1>
 {{text}}
 </h1>
+<form action="{% url 'single' %}" method="post">
+{% csrf_token %}
+<input type="hidden" name="player" value="0">
+<input type="hidden" name="valueH" value=0>
+<input type="submit" name="correct" value="Time's Up">
+</form>
 {% endblock %}

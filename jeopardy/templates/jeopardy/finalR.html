@@ -8,8 +8,8 @@
 <div>
 {% if show1 %}
 <h2> {{p1}} </h2>
-<h2> {{response1}} </h2>
-<h2> {{wager1}} </h2>
+<h2> Response: {{response1}} </h2>
+<h2> Wager: {{wager1}} </h2>
     <form action="{% url 'final' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="response1" value={{response1}}>
@@ -43,8 +43,8 @@
 <div>
 {% if show2 %}
 <h2> {{p2}} </h2>
-<h2> {{response2}} </h2>
-<h2> {{wager2}} </h2>
+<h2> Response: {{response2}} </h2>
+<h2> Wager: {{wager2}} </h2>
     <form action="{% url 'final' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="response1" value={{response1}}>
@@ -78,8 +78,8 @@
 <div>
 {% if show3 %}
 <h2> {{p3}} </h2>
-<h2> {{response3}} </h2>
-<h2> {{wager3}} </h2>
+<h2> Response: {{response3}} </h2>
+<h2> Wager: {{wager3}} </h2>
     <form action="{% url 'final' %}" method="post">
     {% csrf_token %}
     <input type="hidden" name="response1" value={{response1}}>
