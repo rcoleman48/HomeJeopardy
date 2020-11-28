@@ -1,5 +1,5 @@
 # HomeJeopardy
-A basic Django App to create a home jeopardy game based off a CSV of categories and clues
+A basic Django App to create a home jeopardy game based off a TSV of categories and clues
 Requires python and pip (used to install libraries)
 
 # Windows User Guide
@@ -16,4 +16,4 @@ This should launch the server at 127.0.0.1:8000
 In a web browser navigate to 127.0.0.1:8000 or wherever the server was launched according to the terminal 
 
 # Writing Question Bank
-2 example tsv's are included to use as an example for how to format. The file saved as "JeopardyTest.tsv" in the entries folder will be read. So either change the file name of the bank you want to use to that or in "views.py" change line 18 to the new file name
+3 example tsv's are included to use as an example for how to format. The file saved as "JeopardyTest.tsv" in the entries folder will be read. So either change the file name of the bank you want to use to that or in "views.py" change line 18 to the new file name
