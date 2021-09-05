@@ -58,6 +58,7 @@ background-color: #060CE9;
 <h1>
 {{text}}
 </h1>
+<img src="/static/jeopardy/double{{ catnum }}_{{ qnum }}.jpg" alt="my image"> 
 <form action="{% url 'double' %}" method="post">
 {% csrf_token %}
 <input type="hidden" name="player" value="0">

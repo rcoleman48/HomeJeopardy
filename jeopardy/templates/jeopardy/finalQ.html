@@ -6,6 +6,7 @@
 
 {% block body %}
     <h1>{{text}}</h1>
+    <img src="/static/jeopardy/Final.jpg" alt="my image"> 
     <form action="{% url 'final' %}" method="post">
     {% csrf_token %}
     <label for="response1"> {{p1}} Answer: </label>

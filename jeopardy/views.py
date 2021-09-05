@@ -6,6 +6,7 @@ import markdown2
 from random import randint
 import fnmatch
 import csv
+import numpy as np
 
 categories =[]
 questions = [[],[],[],[],[],[],[],[],[],[],[],[],[]]

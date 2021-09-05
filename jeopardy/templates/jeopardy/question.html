@@ -1,4 +1,5 @@
 {% extends "jeopardy/layout.html" %}
+{% load static %}
 <head>
 <style>
 body {
@@ -58,6 +59,7 @@ background-color: #060CE9;
 <h1>
 {{text}}
 </h1>
+<img src="/static/jeopardy/{{ catnum }}_{{ qnum }}.jpg" alt="my image"> 
 <form action="{% url 'single' %}" method="post">
 {% csrf_token %}
 <input type="hidden" name="player" value="0">
