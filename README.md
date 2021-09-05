@@ -17,3 +17,8 @@ In a web browser navigate to 127.0.0.1:8000 or wherever the server was launched 
 
 # Writing Question Bank
 3 example tsv's are included to use as an example for how to format. The file saved as "JeopardyTest.tsv" in the entries folder will be read. So either change the file name of the bank you want to use to that or in "views.py" change line 18 to the new file name
+Lines 157 and 211 should be changed to change where the daily doubles are located for double and single jeopardy respectively 
+
+Images to be used in questions should be stored under jeopardy/static/jeopardy
+file names should be "(category number)_(question number).jpg" for single jeopardy "double(category number)_(question number).jpg" for double jeopardy both of the numbers index starting at zero. Only .jpg are supported at this time 
+Two example images are already added
